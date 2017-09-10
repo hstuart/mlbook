@@ -1,0 +1,23 @@
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+Name: mlbook
+Version: 0.1
+Synopsis: A variant of gitbook written in OCaml
+Authors: Henrik Stuart <hg@hstuart.dk>
+License: MIT
+
+Description: Foo
+Homepage: https://github.com/hstuart/mlbook
+
+Executable mlbook
+  Path: src
+  MainIs: mlbook.ml
+  CompiledObject: best
+  BuildDepends:
+    yojson,
+    mustache,
+    core,
+    omd,
+    fileutils

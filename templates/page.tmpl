@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http_equiv="Content-Type">
+    <title>{{title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="generator" content="mlbook">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    {{#has_next}}
+    <link rel="next" href="{{next}}">
+    {{/has_next}}
+    {{#has_prev}}
+    <link rel="prev" href="{{prev}}">
+    {{/has_prev}}
+    <link rel="stylesheet" href="{{prefix}}mlbook/website.css">
+    <link rel="stylesheet" href="{{prefix}}mlbook/search.css">
+    <link rel="stylesheet" href="{{prefix}}mlbook/style.css">
+  </head>
+  <body>
+    <div class="book font-size-2 font-family-1 with-summary">
+      <div class="book-summary">
+        <div id="book-search-input" role="search">
+          <input type="text" placeholder="Type to search" />
+        </div>
+        <nav role="navigation">
+          <ul class="summary">
+            {{{summary}}}
+            <li class="divider"></li>
+            <li>
+              <a href="https://github.com/hstuart/mlbook" target="blank" class="mlbook-link">
+                Published with MlBook
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="book-body">
+        <div class="body-inner">
+          <div class="book-header" role="navigation">
+            <h1>
+              <i class="fa fa-circle-o-notch fa-spin"></i>
+              <a href=".">{{title}}</a>
+            </h1>
+          </div>
+          <div class="page-wrapper" tabindex="-1" role="main">
+            <div class="page-inner">
+              <div id="book-search-results">
+                <div class="search-noresults">
+                  <section class="normal markdown-section">
+                    {{{page}}}
+                  </section>
+                </div>
+                <div class="search-results">
+                  <div class="has-results">
+                    <h1 class="search-results-title"></h1>
+                    <ul class="search-results-list"></ul>
+                  </div>
+                  <div class="no-results">
+                    <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{#has_prev}}
+        <a href="{{prev}}" class="navigation navigation-prev " aria-label="Previous page: {{prev_title}}"><i class="fa fa-angle-left"></i></a>
+        {{/has_prev}}
+        {{#has_next}}
+        <a href="{{next}}" class="navigation navigation-next " aria-label="Next page: {{next_title}}"><i class="fa fa-angle-right"></i></a>
+        {{/has_next}}
+      </div>
+      <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+          gitbook.page.hasChanged(
+            {
+              "page": {
+                "title": "{{title}}",
+                "dir": "ltr"
+              },
+              "config": {
+              },
+              "file": {
+              },
+              "gitbook": {
+              },
+              "basePath": "{{prefix}}",
+              "book": {
+                "language": "da"
+              }
+            }
+          )
+        });
+
+        var prefix = "{{prefix}}";
+      </script>
+    </div>
+    <script src="{{prefix}}mlbook/gitbook.js"></script>
+    <script src="{{prefix}}mlbook/theme.js"></script>
+    <script src="{{prefix}}mlbook/search-engine.js"></script>
+    <script src="{{prefix}}mlbook/search.js"></script>
+    <script src="{{prefix}}mlbook/lunr.min.js"></script>
+    <script src="{{prefix}}mlbook/lunr.stemmer.support.min.js"></script>
+    <script src="{{prefix}}mlbook/lunr.da.min.js"></script>
+    <script src="{{prefix}}mlbook/mlbook-search.js"></script>
+  </body>
+</html>

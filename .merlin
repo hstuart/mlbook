@@ -1,0 +1,6 @@
+PKG core
+PKG omd
+PKG mustache
+PKG fileutils
+S src/**
+B _build/**
